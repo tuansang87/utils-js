@@ -13,9 +13,37 @@ function capitalize1stLetter(text = "") {
     return upper;
 }
 
+function transformArrayToDictionaryByKey(arr, key) {
+    let dict = {};
+    arr.forEach(element => {
+        let kVale = element[key];
+        dict[kVale] = {
+            ...element
+        };
+    });
+    return dict;
+}
 
-capitalize1stLetter("capitalize1stLetter");
+function parseFbAvatarUrl(url) {
+    let avatar = url;
+    if (!!url) {
+        const patternPrefix = "asid=";
+        let regexResult = /asid=[0-9]*/.exec(url);
+        if (!!regexResult && !!regexResult[0] && regexResult[0].length > patternPrefix.length) {
+            let fbID = regexResult[0].substr(patternPrefix.length, regexResult[0].length - patternPrefix.length)
+            avatar = `https://graph.facebook.com/${fbID}/picture?type=large`;
+        } else {
+            avatar = this._avatar + "?ts=" + Math.random()
+        }
+    }
+    return avatar;
+}
 
+
+let res = parseFbAvatarUrl("https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1863308063755381&height=50&width=50&ext=1547891887&hash=AeQEeYEGlcVKRGV5");
+
+
+console.log(res);
 // export default {
 //     sortArryByKey,
 //     capitalize1stLetter
