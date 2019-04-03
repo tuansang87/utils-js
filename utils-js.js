@@ -39,11 +39,34 @@ function parseFbAvatarUrl(url) {
     return avatar;
 }
 
+function unique(arr, primaryKey) {
+    let map = new Map();
+    let result = [];
+    for (const item of arr) {
+        if (!map.has(item[primaryKey])) {
+            map.set(item[primaryKey], true);
+            result.push(item);
+        }
+    }
+    return result
+}
 
 let res = parseFbAvatarUrl("https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1863308063755381&height=50&width=50&ext=1547891887&hash=AeQEeYEGlcVKRGV5");
 
 
-console.log(res);
+console.log(unique([{
+        id: 1,
+        name: 'a'
+    },
+    {
+        id: 12,
+        name: 'a'
+    },
+    {
+        id: 1,
+        name: 'b'
+    },
+], 'id'));
 // export default {
 //     sortArryByKey,
 //     capitalize1stLetter
