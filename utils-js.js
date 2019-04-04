@@ -53,10 +53,12 @@ function unique(arr, primaryKey) {
 
 let res = parseFbAvatarUrl("https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1863308063755381&height=50&width=50&ext=1547891887&hash=AeQEeYEGlcVKRGV5");
 function insertItemAtIndex(arr, item, index) {
-    arr.splice(index, 0, item);
-    return arr;
+    return arr.splice(index, 0, item);
 }
 
+function removeItemAtIndex(arr, index) {
+    return arr.splice(index, 1);
+}
 
 console.log(unique([{
         id: 1,
