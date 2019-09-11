@@ -1,1 +1,7 @@
-npm install native-base react-native-actionsheet react-native-af-video-player react-native-android-open-settings react-native-appstate-listener  react-native-device-info react-native-event-listeners react-native-fast-image react-native-firebase react-native-gesture-handler react-native-hyperlinked-text react-native-image-picker react-native-languages react-native-maps react-native-modal-datetime-picker react-native-permissions react-native-picker react-native-rest-client react-native-smart-splash-screen react-native-webview react-navigation react-navigation-backhandler reactotron-react-native moment i18n-js
+
+***MODULES***
+npm install native-base react-native-actionsheet react-native-af-video-player react-native-android-open-settings react-native-appstate-listener  react-native-device-info react-native-event-listeners react-native-fast-image react-native-firebase react-native-gesture-handler react-native-hyperlinked-text react-native-image-picker react-native-languages react-native-maps react-native-modal-datetime-picker react-native-permissions react-native-picker react-native-rest-client react-native-smart-splash-screen react-native-webview react-navigation react-navigation-backhandler reactotron-react-native moment i18n-js @react-native-community/async-storage --save
+
+**DEV_MODULES**
+npm install eslint-plugin-react eslint-plugin-react-native babel-plugin-transform-inline-environment-variables jetifier --save-dev
+
