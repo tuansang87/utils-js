@@ -1,3 +1,25 @@
+/**
+ * Returns TRUE if the first specified array contains all elements
+ * from the second one. FALSE otherwise.
+ *
+ * @param {array} superset
+ * @param {array} subset
+ *
+ * @returns {boolean}
+ */
+function arrayContainsArray (superset, subset) {
+  // solution 1
+  return _.difference(subset, superset).length === 0;
+    
+  // solution 2
+  if (0 === subset.length) {
+    return false;
+  }
+  return subset.every(function (value) {
+    return (superset.indexOf(value) >= 0);
+  });
+}
+
 function sortArryByKey(arr = [], key = "id", isDescending = false) {
     let newArr = arr.sort(function compareFunc(obj1, obj2) {
         return isDescending ? obj1[key] < obj2[key] : obj1[key] > obj2[key]
