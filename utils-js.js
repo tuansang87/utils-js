@@ -2,6 +2,22 @@
  * Returns TRUE if the first specified array contains all elements
  * from the second one. FALSE otherwise.
  *
+ * @param {number} box width
+ * @param {number} box height
+ * @param {string} text to render
+ * @param {number} candidator font size
+ * @note simulate adjustFontSizeToFixWidth on iOS for Android
+ * @returns {number}
+ */
+function  calculateFontSizeForText(bWidth, bHeight , text , candidateFontSize){
+ let fontSize = Math.sqrt(bWidth * bHeight / `${text}`.length);
+  fontSize = Math.min(fontSize, candidateFontSize);
+  return fontSize;
+}
+/**
+ * Returns TRUE if the first specified array contains all elements
+ * from the second one. FALSE otherwise.
+ *
  * @param {array} superset
  * @param {array} subset
  *
