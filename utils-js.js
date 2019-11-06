@@ -1,13 +1,12 @@
 /**
- * Return font size to make sure 1 line text always fix in box
- * from the second one. FALSE otherwise.
+ * Return font size to make sure 1 line text always fix in box.
  *
- * @param {number} box width
- * @param {number} box height
- * @param {string} text to render
- * @param {number} candidator font size
+ * @param {number} `bWidth` box width
+ * @param {number} `bHeight` box height
+ * @param {string} `text` text to render
+ * @param {number} `candidateFontSize` candidator font size
  * @note simulate adjustFontSizeToFixWidth on iOS for Android
- * @returns {number}
+ * @returns {number} font size
  */
 function  calculateFontSizeForText(bWidth, bHeight , text , candidateFontSize){
  let fontSize = Math.sqrt(bWidth * bHeight / `${text}`.length);
