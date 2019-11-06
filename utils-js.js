@@ -1,5 +1,5 @@
 /**
- * Returns TRUE if the first specified array contains all elements
+ * Return font size to make sure 1 line text always fix in box
  * from the second one. FALSE otherwise.
  *
  * @param {number} box width
