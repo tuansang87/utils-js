@@ -136,3 +136,19 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		return dist;
 	}
 }
+
+/**
+ * Disallow dynamic type on iOS.
+ * MUST IMPORT Text , TextInput component from react-native module FIRSTLY
+ */
+
+function disableAutoResizeFont(){
+	if (!!!Text.defaultProps) {
+            Text.defaultProps = {};
+        }
+        if (!!!TextInput.defaultProps) {
+            TextInput.defaultProps = {};
+        }
+        Text.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
+        TextInput.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
+}
