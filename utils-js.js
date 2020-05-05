@@ -152,3 +152,10 @@ function disableAutoResizeFont(){
         Text.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
         TextInput.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
 }
+
+/**
+ * Rearrange string character.
+ */
+var sortAlphabets = function(text) {
+    return text.split('').sort().join('');
+};
