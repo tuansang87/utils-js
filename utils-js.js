@@ -8,10 +8,10 @@
  * @note simulate adjustFontSizeToFixWidth on iOS for Android
  * @returns {number} font size
  */
-function  calculateFontSizeForText(bWidth, bHeight , text , candidateFontSize){
- let fontSize = Math.sqrt(bWidth * bHeight / `${text}`.length);
-  fontSize = Math.min(fontSize, candidateFontSize);
-  return fontSize;
+function calculateFontSizeForText(bWidth, bHeight, text, candidateFontSize) {
+    let fontSize = Math.sqrt(bWidth * bHeight / `${text}`.length);
+    fontSize = Math.min(fontSize, candidateFontSize);
+    return fontSize;
 }
 /**
  * Returns TRUE if the first specified array contains all elements
@@ -22,17 +22,17 @@ function  calculateFontSizeForText(bWidth, bHeight , text , candidateFontSize){
  *
  * @returns {boolean}
  */
-function arrayContainsArray (superset, subset) {
-  // solution 1
-  return _.difference(subset, superset).length === 0;
-    
-  // solution 2
-  if (0 === subset.length) {
-    return false;
-  }
-  return subset.every(function (value) {
-    return (superset.indexOf(value) >= 0);
-  });
+function arrayContainsArray(superset, subset) {
+    // solution 1
+    return _.difference(subset, superset).length === 0;
+
+    // solution 2
+    if (0 === subset.length) {
+        return false;
+    }
+    return subset.every(function (value) {
+        return (superset.indexOf(value) >= 0);
+    });
 }
 
 function sortArryByKey(arr = [], key = "id", isDescending = false) {
@@ -98,17 +98,17 @@ function removeItemAtIndex(arr, index) {
 }
 
 console.log(unique([{
-        id: 1,
-        name: 'a'
-    },
-    {
-        id: 12,
-        name: 'a'
-    },
-    {
-        id: 1,
-        name: 'b'
-    },
+    id: 1,
+    name: 'a'
+},
+{
+    id: 12,
+    name: 'a'
+},
+{
+    id: 1,
+    name: 'b'
+},
 ], 'id'));
 // export default {
 //     sortArryByKey,
@@ -116,25 +116,25 @@ console.log(unique([{
 // }
 
 function distance(lat1, lon1, lat2, lon2, unit) {
-	if ((lat1 == lat2) && (lon1 == lon2)) {
-		return 0;
-	}
-	else {
-		var radlat1 = Math.PI * lat1/180;
-		var radlat2 = Math.PI * lat2/180;
-		var theta = lon1-lon2;
-		var radtheta = Math.PI * theta/180;
-		var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-		if (dist > 1) {
-			dist = 1;
-		}
-		dist = Math.acos(dist);
-		dist = dist * 180/Math.PI;
-		dist = dist * 60 * 1.1515;
-		if (unit=="K") { dist = dist * 1.609344 }
-		if (unit=="N") { dist = dist * 0.8684 }
-		return dist;
-	}
+    if ((lat1 == lat2) && (lon1 == lon2)) {
+        return 0;
+    }
+    else {
+        var radlat1 = Math.PI * lat1 / 180;
+        var radlat2 = Math.PI * lat2 / 180;
+        var theta = lon1 - lon2;
+        var radtheta = Math.PI * theta / 180;
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        if (dist > 1) {
+            dist = 1;
+        }
+        dist = Math.acos(dist);
+        dist = dist * 180 / Math.PI;
+        dist = dist * 60 * 1.1515;
+        if (unit == "K") { dist = dist * 1.609344 }
+        if (unit == "N") { dist = dist * 0.8684 }
+        return dist;
+    }
 }
 
 /**
@@ -142,20 +142,25 @@ function distance(lat1, lon1, lat2, lon2, unit) {
  * MUST IMPORT Text , TextInput component from react-native module FIRSTLY
  */
 
-function disableAutoResizeFont(){
-	if (!!!Text.defaultProps) {
-            Text.defaultProps = {};
-        }
-        if (!!!TextInput.defaultProps) {
-            TextInput.defaultProps = {};
-        }
-        Text.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
-        TextInput.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
+function disableAutoResizeFont() {
+    if (!!!Text.defaultProps) {
+        Text.defaultProps = {};
+    }
+    if (!!!TextInput.defaultProps) {
+        TextInput.defaultProps = {};
+    }
+    Text.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
+    TextInput.defaultProps.allowFontScaling = false; // Disallow dynamic type on iOS
 }
 
 /**
  * Rearrange string character.
  */
-var sortAlphabets = function(text) {
+var sortAlphabets = function (text) {
     return text.split('').sort().join('');
 };
+
+
+/**
+ * test me now
+ */
